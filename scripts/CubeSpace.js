@@ -51,15 +51,25 @@ CubeSpace.prototype.explodeCube = function(mesh) {
 
 CubeSpace.prototype.getBreakPoints = function(position, size) {
   const points = [];
-  points.push(position.clone().add(new THREE.Vector3(size / 4, size / 4, 0)));
-  points.push(position.clone().add(new THREE.Vector3(- size / 4, size / 4, 0)));
-  points.push(position.clone().add(new THREE.Vector3(size / 4, - size / 4, 0)));
-  points.push(position.clone().add(new THREE.Vector3(- size / 4, - size / 4, 0)));
+  points.push(position.clone().add(new THREE.Vector3(size / 4, size / 4, size / 4)));
+  points.push(position.clone().add(new THREE.Vector3(- size / 4, size / 4, size / 4)));
+  points.push(position.clone().add(new THREE.Vector3(size / 4, - size / 4, size / 4)));
+  points.push(position.clone().add(new THREE.Vector3(- size / 4, - size / 4, size / 4)));
+
+  points.push(position.clone().add(new THREE.Vector3(size / 4, size / 4, - size / 4)));
+  points.push(position.clone().add(new THREE.Vector3(- size / 4, size / 4, - size / 4)));
+  points.push(position.clone().add(new THREE.Vector3(size / 4, - size / 4, - size / 4)));
+  points.push(position.clone().add(new THREE.Vector3(- size / 4, - size / 4, - size / 4)));
   return points;
 }
 
 CubeSpace.prototype.getVelocityAdded = function() {
   const velocities = [];
+  velocities.push(new THREE.Vector3(1, 1, 0).normalize());
+  velocities.push(new THREE.Vector3(-1, 1, 0).normalize());
+  velocities.push(new THREE.Vector3(1, -1, 0).normalize());
+  velocities.push(new THREE.Vector3(-1, -1, 0).normalize());
+  
   velocities.push(new THREE.Vector3(1, 1, 0).normalize());
   velocities.push(new THREE.Vector3(-1, 1, 0).normalize());
   velocities.push(new THREE.Vector3(1, -1, 0).normalize());
