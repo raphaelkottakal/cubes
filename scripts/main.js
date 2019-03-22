@@ -91,7 +91,7 @@ function onTapSpace(event) {
   mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
   raycaster.setFromCamera( mouse, camera );
   const intersects = raycaster.intersectObjects( scene.children );
-  theSpace.explodeCube(intersects[0].object);
+  if (intersects[0]) theSpace.explodeCube(intersects[0].object);
   // for ( var i = 0; i < intersects.length; i++ ) {
   // }
 }
