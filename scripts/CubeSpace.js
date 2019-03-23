@@ -53,15 +53,15 @@ CubeSpace.prototype.explodeCube = function(mesh) {
 
 CubeSpace.prototype.getBreakPoints = function(position, size) {
   const points = [];
-  points.push(position.clone().add(new THREE.Vector3(size / 4, size / 4, size / 4)).multiplyScalar(1.1));
-  points.push(position.clone().add(new THREE.Vector3(- size / 4, size / 4, size / 4)).multiplyScalar(1.1));
-  points.push(position.clone().add(new THREE.Vector3(size / 4, - size / 4, size / 4)).multiplyScalar(1.1));
-  points.push(position.clone().add(new THREE.Vector3(- size / 4, - size / 4, size / 4)).multiplyScalar(1.1));
+  points.push(position.clone().add(new THREE.Vector3(size / 4, size / 4, size / 4)).multiplyScalar(1));
+  points.push(position.clone().add(new THREE.Vector3(- size / 4, size / 4, size / 4)).multiplyScalar(1));
+  points.push(position.clone().add(new THREE.Vector3(size / 4, - size / 4, size / 4)).multiplyScalar(1));
+  points.push(position.clone().add(new THREE.Vector3(- size / 4, - size / 4, size / 4)).multiplyScalar(1));
 
-  points.push(position.clone().add(new THREE.Vector3(size / 4, size / 4, - size / 4)).multiplyScalar(1.1));
-  points.push(position.clone().add(new THREE.Vector3(- size / 4, size / 4, - size / 4)).multiplyScalar(1.1));
-  points.push(position.clone().add(new THREE.Vector3(size / 4, - size / 4, - size / 4)).multiplyScalar(1.1));
-  points.push(position.clone().add(new THREE.Vector3(- size / 4, - size / 4, - size / 4)).multiplyScalar(1.1));
+  points.push(position.clone().add(new THREE.Vector3(size / 4, size / 4, - size / 4)).multiplyScalar(1));
+  points.push(position.clone().add(new THREE.Vector3(- size / 4, size / 4, - size / 4)).multiplyScalar(1));
+  points.push(position.clone().add(new THREE.Vector3(size / 4, - size / 4, - size / 4)).multiplyScalar(1));
+  points.push(position.clone().add(new THREE.Vector3(- size / 4, - size / 4, - size / 4)).multiplyScalar(1));
   return points;
 }
 
